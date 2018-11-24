@@ -12,8 +12,7 @@ import voluptuous as vol
 
 import homeassistant.helpers.config_validation as cv
 from homeassistant.components.sensor import PLATFORM_SCHEMA
-from homeassistant.const import (
-    CONF_IP_ADDRESS, CONF_TOKEN, CONF_SCAN_INTERVAL)
+from homeassistant.const import (CONF_IP_ADDRESS, CONF_TOKEN)
 from homeassistant.helpers.entity import Entity
 from homeassistant.util import Throttle
 
@@ -26,8 +25,6 @@ SCAN_INTERVAL = timedelta(seconds=1)
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
     vol.Required(CONF_IP_ADDRESS): cv.string,
     vol.Required(CONF_TOKEN): cv.string,
-    vol.Optional(CONF_SCAN_INTERVAL, default=SCAN_INTERVAL):
-        cv.time_period,
 })
 
 
